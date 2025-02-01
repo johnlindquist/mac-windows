@@ -1,2 +1,21 @@
-swift
+# Development
+swift/
+test/
+example.js
+vitest.config.ts
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# IDE and OS files
 .DS_Store
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# CI
+.github/

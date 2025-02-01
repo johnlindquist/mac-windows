@@ -1,14 +1,16 @@
 {
-  "name": "mac-windows",
+  "name": "@johnlindquist/mac-windows",
   "version": "1.0.0",
   "description": "Provide information about Application Windows running and activate and Application.",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "build-activate-window": "swift build -c release --package-path swift/ActivateWindow && cp swift/ActivateWindow/.build/release/activate-window scripts/ActivateWindow",
     "build-mac-windows": "swift build -c release --package-path swift/MacWindows  && cp swift/MacWindows/.build/release/mac-windows scripts/MacWindows",
-    "start": "node index.js",
-    "build": "npm run build-activate-window && npm run build-mac-windows",
-    "test": "xo"
+    "start": "pnpm node index.js",
+    "build": "pnpm build-activate-window && pnpm build-mac-windows",
+    "test": "pnpm exec vitest --watch false",
+    "prepublishOnly": "pnpm build"
   },
   "os": [
     "darwin",
@@ -17,8 +19,12 @@
   ],
   "files": [
     "index.js",
-    "scripts"
+    "scripts",
+    "README.md"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "keywords": [
     "Mac",
     "Windows",
@@ -38,9 +44,13 @@
     "url": "https://github.com/karaggeorge/mac-windows/issues"
   },
   "devDependencies": {
+    "vitest": "^3.0.4",
     "xo": "^0.20.3"
   },
   "xo": {
     "space": 2
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
