@@ -1,6 +1,6 @@
 {
   "name": "@johnlindquist/mac-windows",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide information about Application Windows running and activate and Application.",
   "type": "commonjs",
   "main": "dist/index.js",
