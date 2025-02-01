@@ -11,7 +11,8 @@
     "build": "pnpm build:universal && tsc",
     "test": "pnpm exec vitest --watch false",
     "prepublishOnly": "pnpm build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "chmod +x scripts/ActivateWindow scripts/MacWindows"
   },
   "os": [
     "darwin",
